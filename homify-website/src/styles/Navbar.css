@@ -1,0 +1,75 @@
+:root {
+    --teal: #429497; /* Sampled from your image, adjust as needed */
+    --navbar-text: #111;
+  }
+  
+  .navbar {
+    background: var(--teal);
+    padding: 0 32px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #429497;
+    box-sizing: border-box;
+  }
+  
+  .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--navbar-text);
+    letter-spacing: 2px;
+    margin-left: 24px;
+  }
+  
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    margin-right: 24px;
+  }
+  
+  .navbar-links li {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  
+  .navbar-links a {
+    color: var(--navbar-text);
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 6px 14px;
+    border-radius: 4px;
+  }
+  
+  .navbar-links a:hover {
+    background: #fff;
+    color: var(--teal);
+  }
+  
+  /* Remove default bullets and padding */
+  ul.navbar-links {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Responsive for mobile */
+  @media (max-width: 700px) {
+    .navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 12px;
+    }
+    .navbar-brand {
+      margin: 0 0 12px 0;
+      font-size: 2rem;
+    }
+    .navbar-links {
+      gap: 18px;
+      margin: 0;
+    }
+  }
+  

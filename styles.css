@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #002147;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav .search-bar input {
+    padding: 5px;
+}
+
+nav .quote-btn {
+    padding: 8px 12px;
+    background-color: #FF7F50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-buttons .primary-btn,
+.hero-buttons .secondary-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.primary-btn {
+    background-color: #FF7F50;
+}
+
+.secondary-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Services Section */
+.services-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s;
+    text-align: center;
+    width: 200px;
+}
+
+.service-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    background-color: #002147;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature {
+    width: 150px;
+    text-align: center;
+}
+
+.feature img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+/* Testimonial Carousel */
+.testimonial-carousel {
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #002147;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.footer-links,
+.newsletter,
+.social-media {
+    flex: 1;
+    margin: 10px;
+}
+
+.social-media img {
+    width: 30px;
+    margin: 0 10px;
+}

@@ -1,0 +1,111 @@
+:root {
+    --teal: #57c6c1;
+    --peach: #fde5c1;
+    --peach-dark: #fedbbd;
+    --dark: #222;
+    --white: #fff;
+  }
+  
+  .about-bg {
+    min-height: 100vh;
+    background: var(--peach);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .about-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px 0 24px 0;
+  }
+  
+  .about-card {
+    background: var(--white);
+    border-radius: 16px;
+    border: 2.5px solid var(--teal);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+    max-width: 900px;
+    width: 100%;
+    padding: 44px 40px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px #b2dfdb, 0 1px 0 #fff;
+  }
+  
+  .about-subtitle {
+    color: var(--teal);
+    font-size: 1.2rem;
+    margin-bottom: 2.2rem;
+    font-weight: 500;
+  }
+  
+  .about-features {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .about-feature {
+    margin-bottom: 1.6rem;
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+    background: var(--peach-dark);
+    border-radius: 10px;
+    border-left: 5px solid var(--teal);
+    box-shadow: 0 2px 8px #b2dfdb55;
+  }
+  
+  .about-feature h2 {
+    color: var(--teal);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+  
+  .about-feature ul {
+    margin: 0;
+    padding-left: 1.1em;
+  }
+  
+  .about-feature li {
+    color: var(--dark);
+    font-size: 1rem;
+    margin-bottom: 0.5em;
+    line-height: 1.6;
+  }
+  
+  .about-note {
+    background: #fffbe8;
+    border: 1.5px solid #ffe0a3;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 16px 18px;
+    font-size: 1.08rem;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 1px 6px #fedbbd88;
+    /* margin-right: 0;   */
+  }
+  
+  
+  @media (max-width: 900px) {
+    .about-card {
+      padding: 24px 10px 18px 10px;
+      max-width: 98vw;
+    }
+    .about-main {
+      padding: 24px 0 12px 0;
+    }
+  }
+  

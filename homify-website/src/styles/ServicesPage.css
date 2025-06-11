@@ -1,0 +1,18 @@
+.services-container {
+    background: linear-gradient(135deg, #f3f3f3, #e2e2e2);
+    padding: 50px 20px;
+}
+
+.services-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
