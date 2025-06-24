@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/Register.css';
 // import your image, e.g.:
-import flatifySignupImage from '/Users/deepshika/Desktop/Homify/homify-website/src/assets/signup.png';
+import flatifySignupImage from '../assets/signup.png';
 
 const Register = () => {
   const [form, setForm] = useState({

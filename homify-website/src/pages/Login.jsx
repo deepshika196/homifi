@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import flatifyImage from '/Users/deepshika/Desktop/Homify/homify-website/src/assets/flatify-image.png'; 
+import flatifyImage from '../assets/flatify-image.png'; 
 import '../styles/Login.css';
 
 const Login = () => {

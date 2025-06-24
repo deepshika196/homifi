@@ -1,43 +1,61 @@
-// src/components/HeroSection.jsx
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../styles/HeroSection.css';
-import heroBackground1 from '../assets/Ac_Mechanic.jpg';
-import heroBackground2 from '../assets/Cleaning.jpeg';
-import heroBackground3 from '../assets/Electrician.jpg';
+import heroImage from '../assets/Electrician.jpg';
+import serviceImage from '../assets/Ac_Mechanic.jpg'; // Replace with actual image
 
 function HeroSection() {
-    const images = [heroBackground1, heroBackground2, heroBackground3];
-    const [currentImage, setCurrentImage] = useState(0);
-    const [animateText, setAnimateText] = useState(false);
-
-    // Background image slideshow effect
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-        }, 5000); // Change background every 5 seconds
-
-        setAnimateText(true); // Trigger text animation
-
-        return () => clearInterval(intervalId); // Cleanup the interval on component unmount
-    }, []);
-
     return (
-        <header
-            className="hero-section"
-            style={{
-                backgroundImage: `url(${images[currentImage]})`,
-            }}
-        >
-            <div className="overlay"></div>
-            <div className="hero-content">
-                <h1 className={`animated-text ${animateText ? 'fade-in' : ''}`}>Homifi</h1>
-                <h2 className={`animated-subtext ${animateText ? 'slide-up' : ''}`}>Your Home, Our Priority</h2>
-                <div className="hero-buttons">
-                    <a href="services" className="primary-btn animated-btn">Book a Service</a>
-                    <a href="about" className="secondary-btn animated-btn">Learn More</a>
+        <>
+            <header className="hero-section">
+                <div className="hero-left">
+                    <h1>Flatify</h1>
+                    <h2>Your Flat, Our Priority</h2>
+                    <div className="hero-buttons">
+                        <a href="register" className="primary-btn">Register Flat</a>
+                        <a href="about" className="secondary-btn">Learn More</a>
+                    </div>
                 </div>
-            </div>
-        </header>
+                <div className="hero-right">
+                    <img src={heroImage} alt="Hero" />
+                </div>
+            </header>
+
+            <section className="maintenance-section">
+                <div className="maintenance-left">
+                    <img src={serviceImage} alt="Service" />
+                </div>
+                <div className="maintenance-right">
+                    <h2>Maintenance Regulation</h2>
+                    <p>
+                        The Flatify Maintenance Regulation is designed to ensure that the maintenance of your flat is handled efficiently and effectively. Our team of experts is dedicated to providing top-notch services, ensuring that your living space remains in optimal condition.
+                    </p>
+                </div>
+            </section>
+
+            <section className='community-section'>
+                <div className="community-left">
+                    <h2>Community Announcements</h2>
+                    <p>
+                        The latest updates and announcements from your community. Stay informed about upcoming events, maintenance schedules, and important notices that affect your living environment.
+                    </p>
+                </div>
+                <div className="community-right">
+                    <img src={serviceImage} alt="Community" />
+                </div>
+            </section>
+
+            <section className="complaint-section">
+                <div className="complaint-left">
+                    <img src={serviceImage} alt="Complaint" />
+                </div>
+                <div className="complaint-right">
+                    <h2>Complaint Registration</h2>
+                    <p>
+                        If you have any issues or complaints regarding your flat, our complaint registration system allows you to report them easily. Our team will address your concerns promptly to ensure a comfortable living experience.
+                    </p>
+                </div>
+            </section>
+        </>
     );
 }
 

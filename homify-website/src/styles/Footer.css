@@ -2,19 +2,20 @@
     --teal: #429497;
     --peach: #FEDBBD;
     --white: #fff;
+    --black: #000;
   }
   
   .footer {
     width: 100%;
-    background: var(--teal);
-    color: var(--white);
+    background: var(--white);
+    color: var(--black);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 22px 0;
     font-family: 'Playfair Display', serif;
     font-size: 1.25rem;
-    border-top: 3px solid var(--peach);
+    border-top: 3px solid var(--teal);
     box-sizing: border-box;
   }
   
@@ -31,7 +32,7 @@
   }
   
   .footer-links a {
-    color: var(--white);
+    color: var(--black);
     text-decoration: none;
     font-weight: 500;
     transition: text-decoration 0.2s;
