@@ -1,55 +1,58 @@
 :root {
   --teal: #429497;
-  --navbar-color: #f5f1f1;
+  --navbar-color: #f9f9f9;
   --navbar-text: #111;
 }
 
 .navbar {
   background: var(--navbar-color);
-  padding: 0 24px;
-  height: 60px; /* reduced from 80px */
+  padding: 0 40px;
+  height: 80px; /* increased height */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid #429497;
+  border: 3px solid #000; /* black border */
   box-sizing: border-box;
 }
 
 .navbar-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem; /* reduced from 2.5rem */
+  font-family: 'Merriweather Sans', sans-serif; /* more modern font */
+  font-size: 2.2rem; /* increased size */
   font-weight: 800;
   color: var(--navbar-text);
-  letter-spacing: 1.5px;
-  margin-left: 16px;
+  letter-spacing: 1.8px;
+  margin-left: 8px;
 }
 
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 28px; /* optional: reduce spacing between links */
+  gap: 32px; /* spaced out more */
   list-style: none;
   margin-left: auto;
-  padding-right: 16px; /* reduced from 24px */
+  padding-right: 20px;
 }
 
 .navbar-links li {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem; /* reduced from 1.3rem */
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 1.15rem; /* slightly larger */
   font-weight: 600;
 }
 
 .navbar-links a {
   color: var(--navbar-text);
   text-decoration: none;
-  transition: color 0.2s;
-  padding: 4px 10px; /* slightly smaller padding */
-  border-radius: 4px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
 }
 
 .navbar-links a:hover {
-  background: #fff;
+  background: #e7f5f5;
+  border-color: var(--teal);
   color: var(--teal);
+  font-weight: 700;
 }
 
 ul.navbar-links {
@@ -61,20 +64,21 @@ ul.navbar-links {
   .navbar {
     flex-direction: column;
     height: auto;
-    padding: 10px;
+    padding: 10px 16px;
   }
 
   .navbar-brand {
-    margin: 0 0 10px 0;
-    font-size: 1.5rem; /* reduced from 2rem */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
   }
 
   .navbar-links {
-    gap: 14px;
-    margin: 0;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
   }
 
   .navbar-links li {
-    font-size: 0.95rem; /* smaller font for mobile */
+    font-size: 1rem;
   }
 }

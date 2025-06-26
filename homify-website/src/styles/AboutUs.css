@@ -8,7 +8,7 @@
   
   .about-bg {
     min-height: 100vh;
-    background: var(--peach);
+    background: var(--white);
     display: flex;
     flex-direction: column;
   }
@@ -24,7 +24,7 @@
   .about-card {
     background: var(--white);
     border-radius: 16px;
-    border: 2.5px solid var(--teal);
+    border: 10px solid var(--dark);
     box-shadow: 0 4px 24px rgba(0,0,0,0.09);
     max-width: 900px;
     width: 100%;
@@ -35,17 +35,16 @@
   }
 
   .about-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Merriweather Sans', sans-serif;
     color: var(--dark);
     font-size: 2.3rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 8px #b2dfdb, 0 1px 0 #fff;
   }
   
   .about-subtitle {
-    color: var(--teal);
+     color: #5a6782;
     font-size: 1.2rem;
     margin-bottom: 2.2rem;
     font-weight: 500;
@@ -59,14 +58,14 @@
   .about-feature {
     margin-bottom: 1.6rem;
     padding: 1.2rem 1.2rem 1.2rem 1.2rem;
-    background: var(--peach-dark);
+    background: #e4e5e5;
     border-radius: 10px;
-    border-left: 5px solid var(--teal);
+    border: 5px solid #000;
     box-shadow: 0 2px 8px #b2dfdb55;
   }
   
   .about-feature h2 {
-    color: var(--teal);
+     color: #5a6782;
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 0.6rem;
@@ -85,17 +84,14 @@
   }
   
   .about-note {
-    background: #fffbe8;
-    border: 1.5px solid #ffe0a3;
-    border-radius: 8px;
-    margin-top: 10px;
-    padding: 16px 18px;
-    font-size: 1.08rem;
-    color: #333;
-    width: 100%;
-    box-sizing: border-box;
-    box-shadow: 0 1px 6px #fedbbd88;
-    /* margin-right: 0;   */
+    background: #e4e5e5;
+  border: 3px solid #333;
+  border-radius: 8px;
+  margin-top: 18px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  color: #333;
+    
   }
   
   

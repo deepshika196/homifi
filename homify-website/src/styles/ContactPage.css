@@ -1,14 +1,12 @@
 :root {
     --teal: #57c6c1;
-    --peach: #fde5c1;
-    --peach-dark: #fedbbd;
     --dark: #222;
     --white: #fff;
   }
   
   .contact-main {
     min-height: 80vh;
-    background: var(--peach);
+    background: var(--white);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -18,7 +16,7 @@
   .contact-card {
     background: var(--white);
     border-radius: 16px;
-    border: 2.5px solid var(--teal);
+    border: 10px solid var(--dark);
     box-shadow: 0 4px 24px rgba(0,0,0,0.09);
     max-width: 700px;
     width: 100%;
@@ -29,17 +27,16 @@
   }
   
   .contact-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Merriweather Sans', sans-serif;
     color: var(--dark);
     font-size: 2.1rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     letter-spacing: 1px;
-    text-shadow: 2px 2px 8px #b2dfdb, 0 1px 0 #fff;
   }
   
   .contact-subtitle {
-    color: var(--teal);
+    color: #5a6782;
     font-size: 1.1rem;
     margin-bottom: 2rem;
     font-weight: 500;
@@ -53,15 +50,17 @@
   }
   
   .contact-person {
-    background: var(--peach-dark);
-    border-radius: 10px;
-    border-left: 5px solid var(--teal);
-    box-shadow: 0 2px 8px #b2dfdb55;
+    background: #e4e5e5;
+    border-left: 5px solid var(--dark);
+    box-shadow: 0 2px 8px #333;
     padding: 1.1rem 1.2rem;
+    border-radius: 5px;
+    border: 5px solid var(--dark);
   }
   
   .contact-person h2 {
-    color: var(--teal);
+    color: #5a6782;
+
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
