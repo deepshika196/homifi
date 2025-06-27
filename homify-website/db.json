@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "5800",
+      "name": "Kaarthickeyan.D",
+      "email": "kaarthickeyan.d@gmail.com",
+      "phone": "6383042509",
+      "password": "Kart@1105",
+      "confirmPassword": "Kart@1105",
+      "pincode": "600039",
+      "city": "Chennai",
+      "apartment": "Police Quarters ",
+      "address": "10/60, 15th West Cross Street"
+    }
+  ]
+}

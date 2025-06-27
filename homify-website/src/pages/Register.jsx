@@ -22,11 +22,71 @@ const Register = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Registration logic here
-    console.log(form);
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  // Email format validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(form.email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Phone number validation (Indian 10-digit)
+  const phoneRegex = /^\d{10}$/;
+  if (!phoneRegex.test(form.phone)) {
+    alert("Please enter a valid 10-digit phone number.");
+    return;
+  }
+
+  // Password match check
+  if (form.password !== form.confirmPassword) {
+    alert("Passwords do not match.");
+    return;
+  }
+
+  try {
+    // Step 1: Check for duplicate email
+    const checkResponse = await fetch(`http://localhost:5000/users?email=${form.email}`);
+    const existingUsers = await checkResponse.json();
+
+    if (existingUsers.length > 0) {
+      alert("An account with this email already exists.");
+      return;
+    }
+
+    // Step 2: If no duplicates, proceed to register
+    const registerResponse = await fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form)
+    });
+
+    if (registerResponse.ok) {
+      alert('User registered successfully!');
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        password: '',
+        confirmPassword: '',
+        pincode: '',
+        city: '',
+        apartment: '',
+        address: ''
+      });
+    } else {
+      alert('Registration failed. Please try again.');
+    }
+
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Error connecting to the server. Please make sure JSON server is running.');
+  }
+};
+  // Reset form after submission
 
   return (
     <div className="register-bg">
@@ -69,14 +129,14 @@ const Register = () => {
                   <input type="text" name="phone" value={form.phone} onChange={handleChange} required />
                 </div>
                 <div className="register-form-group">
-                  <label>Confirm Password</label>
-                  <input type="password" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} required />
+                  <label>Password</label>
+                  <input type="password" name="password" value={form.password} onChange={handleChange} required />
                 </div>
               </div>
               <div className="register-form-row">
                 <div className="register-form-group">
-                  <label>Password</label>
-                  <input type="password" name="password" value={form.password} onChange={handleChange} required />
+                  <label>Confirm Password</label>
+                  <input type="password" name="confirmPassword" value={form.confirmPassword} onChange={handleChange} required />
                 </div>
                 <div className="register-form-group">
                   <label>City/Town</label>

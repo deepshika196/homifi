@@ -37,9 +37,7 @@ const Login = () => {
                   <option value="">Select</option>
                   <option value="resident">Resident</option>
                   <option value="admin">Admin</option>
-                  <option value="admin">workers
-            
-                  </option>
+                  <option value="workers">Workers </option>
                 </select>
               </div>
               <div className="form-group">
