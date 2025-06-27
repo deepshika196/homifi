@@ -126,14 +126,16 @@
      box-sizing: border-box;
 }
 .payment-left h2 {
- font-size: 3rem;
+    font-size: 3rem;
     color: #222;
     margin-bottom: 50px;
+    padding: 0px 30px;
 }   
 .payment-left p {
-font-size: 1.1rem;
+    font-size: 1.1rem;
     color: #555;
     line-height: 1.6;
+    padding: 0px 30px;
 }
 .payment-right {
     flex: 1;
@@ -204,11 +206,13 @@ font-size: 1.1rem;
  font-size: 3rem;
     color: #222;
     margin-bottom: 50px;
+    padding: 0px 30px;
 }   
 .community-left p {
 font-size: 1.1rem;
     color: #555;
     line-height: 1.6;
+    padding: 0px 30px;
 }
 .community-right {
     flex: 1;
