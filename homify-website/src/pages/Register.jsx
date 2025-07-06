@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/Register.css';
@@ -17,76 +17,124 @@ const Register = () => {
     apartment: '',
     address: ''
   });
+  const [role, setRole] = useState('admin'); // Default to admin registration
+  const [mainAdminExists, setMainAdminExists] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  // On mount, check if main admin exists
+  useEffect(() => {
+    fetch('http://localhost:5000/users?role=main_admin')
+      .then(res => res.json())
+      .then(data => {
+        setMainAdminExists(data.length > 0);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleRoleChange = (e) => {
+    setRole(e.target.value);
+  };
 
-  // Email format validation
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(form.email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // Phone number validation (Indian 10-digit)
-  const phoneRegex = /^\d{10}$/;
-  if (!phoneRegex.test(form.phone)) {
-    alert("Please enter a valid 10-digit phone number.");
-    return;
-  }
-
-  // Password match check
-  if (form.password !== form.confirmPassword) {
-    alert("Passwords do not match.");
-    return;
-  }
-
-  try {
-    // Step 1: Check for duplicate email
-    const checkResponse = await fetch(`http://localhost:5000/users?email=${form.email}`);
-    const existingUsers = await checkResponse.json();
-
-    if (existingUsers.length > 0) {
-      alert("An account with this email already exists.");
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      alert("Please enter a valid email address.");
       return;
     }
 
-    // Step 2: If no duplicates, proceed to register
-    const registerResponse = await fetch('http://localhost:5000/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(form)
-    });
-
-    if (registerResponse.ok) {
-      alert('User registered successfully!');
-      setForm({
-        name: '',
-        email: '',
-        phone: '',
-        password: '',
-        confirmPassword: '',
-        pincode: '',
-        city: '',
-        apartment: '',
-        address: ''
-      });
-    } else {
-      alert('Registration failed. Please try again.');
+    // Phone number validation (Indian 10-digit)
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(form.phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return;
     }
 
-  } catch (error) {
-    console.error('Error:', error);
-    alert('Error connecting to the server. Please make sure JSON server is running.');
-  }
-};
-  // Reset form after submission
+    // Password match check
+    if (form.password !== form.confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    try {
+      // Step 1: Check for duplicate email in users and pendingAdmins
+      const checkUser = await fetch(`http://localhost:5000/users?email=${form.email}`);
+      const existingUsers = await checkUser.json();
+
+      const checkPending = await fetch(`http://localhost:5000/pendingAdmins?email=${form.email}`);
+      const existingPending = await checkPending.json();
+
+      if (existingUsers.length > 0 || existingPending.length > 0) {
+        alert("An account with this email already exists or is pending approval.");
+        return;
+      }
+
+      // Step 2: Register logic based on role
+      if (!mainAdminExists && role === "main_admin") {
+        // Register Main Admin directly
+        const registerResponse = await fetch('http://localhost:5000/users', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...form, role: "main_admin", approved: true })
+        });
+
+        if (registerResponse.ok) {
+          alert('Main Admin registered successfully!');
+          setForm({
+            name: '',
+            email: '',
+            phone: '',
+            password: '',
+            confirmPassword: '',
+            pincode: '',
+            city: '',
+            apartment: '',
+            address: ''
+          });
+        } else {
+          alert('Registration failed. Please try again.');
+        }
+      } else if (mainAdminExists && role === "admin") {
+        // Admin requests access, goes to pendingAdmins
+        const registerResponse = await fetch('http://localhost:5000/pendingAdmins', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...form, role: "admin", approved: false })
+        });
+
+        if (registerResponse.ok) {
+          alert('Admin access request submitted! Please wait for Main Admin approval.');
+          setForm({
+            name: '',
+            email: '',
+            phone: '',
+            password: '',
+            confirmPassword: '',
+            pincode: '',
+            city: '',
+            apartment: '',
+            address: ''
+          });
+        } else {
+          alert('Request failed. Please try again.');
+        }
+      } else {
+        alert('Registration is not allowed for this role or at this time.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error connecting to the server. Please make sure JSON server is running.');
+    }
+  };
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className="register-bg">
@@ -95,14 +143,31 @@ const handleSubmit = async (e) => {
         <div className="register-card">
           {/* Left Side: Image and Info */}
           <div className="register-left">
-              <img src={flatifySignupImage} alt="Create your Flatify Account" className="register-image" />
+            <img src={flatifySignupImage} alt="Create your Flatify Account" className="register-image" />
           </div>
           {/* Right Side: Form */}
           <div className="register-right">
             <h1 className="register-title">
-              Let’s Get You Onboard, <span className="register-admin">Admin</span>!
+              {mainAdminExists
+                ? <>Request Admin Access <span className="register-admin">Admin</span>!</>
+                : <>Let’s Get You Onboard, <span className="register-admin">Main Admin</span>!</>
+              }
             </h1>
+
             <form className="register-form" onSubmit={handleSubmit}>
+              {/* Role selection: Only show if Main Admin not registered */}
+              {!mainAdminExists && (
+                <div className="register-form-row">
+                  <div className="register-form-group">
+                    <label>Registering as</label>
+                    <select value={role} onChange={handleRoleChange}>
+                      <option value="main_admin">Main Admin</option>
+                      <option value="admin">Admin</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
               <div className="register-form-row">
                 <div className="register-form-group">
                   <label>Full Name</label>
@@ -151,15 +216,21 @@ const handleSubmit = async (e) => {
               </div>
               <div className="register-form-footer">
                 <span>Already have an account? <a href="/login">Login</a></span>
-                <button type="submit" className="register-btn">SIGN UP</button>
+                <button type="submit" className="register-btn">
+                  {mainAdminExists ? "REQUEST ADMIN ACCESS" : "SIGN UP"}
+                </button>
               </div>
             </form>
             <div className="register-note">
               <span role="img" aria-label="lock">🔒</span>
               <b> Please Note Before Signing Up:</b>
               <ul>
-                <li>After signing up, your account must be verified by the Main Admin of your flat/society.</li>
-                <li>If you are not verified within 24 hours, please contact your Main Admin for assistance.</li>
+                {mainAdminExists ? (
+                  <li>Your admin access request will be reviewed by the Main Admin.</li>
+                ) : (
+                  <li>This registration will create the Main Admin account for your society.</li>
+                )}
+                <li>Residents and Service Workers accounts are created by the Main Admin only.</li>
               </ul>
             </div>
           </div>

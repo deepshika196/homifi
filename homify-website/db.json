@@ -6,11 +6,27 @@
       "email": "kaarthickeyan.d@gmail.com",
       "phone": "6383042509",
       "password": "Kart@1105",
-      "confirmPassword": "Kart@1105",
       "pincode": "600039",
       "city": "Chennai",
-      "apartment": "Police Quarters ",
-      "address": "10/60, 15th West Cross Street"
+      "apartment": "Police Quarters",
+      "address": "10/60, 15th West Cross Street",
+      "role": "main_admin",
+      "approved": true
+    }
+  ],
+  "pendingAdmins": [
+    {
+      "id": "5801",
+      "name": "Admin User",
+      "email": "admin@gmail.com",
+      "phone": "9000000000",
+      "password": "Test@123",
+      "pincode": "600039",
+      "city": "Chennai",
+      "apartment": "Police Quarters",
+      "address": "10/61, 15th West Cross Street",
+      "role": "admin",
+      "approved": false
     }
   ]
 }
