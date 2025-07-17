@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import flatifyImage from '../assets/flatify-image.png'; 
+import flatifyImage from '../assets/flatify-image.png';
 import '../styles/Login.css';
 
 const Login = () => {
@@ -9,10 +10,28 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [remember, setRemember] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (userType === 'main_admin') {
+      try {
+        const res = await fetch(
+          `http://localhost:5000/users?email=${username}&password=${password}&role=main_admin&approved=true`
+        );
+        const data = await res.json();
+        if (data.length > 0) {
+          navigate('/admin');
+        } else {
+          alert('Invalid credentials or account not approved yet.');
+        }
+      } catch (err) {
+        alert('Server error');
+      }
+    } else {
+      alert('Only admin login is enabled for now');
+    }
   };
 
   return (
@@ -36,6 +55,7 @@ const Login = () => {
                 >
                   <option value="">Select</option>
                   <option value="resident">Resident</option>
+                   <option value="main_admin">main_admin</option>
                   <option value="admin">Admin</option>
                   <option value="workers">Workers </option>
                 </select>

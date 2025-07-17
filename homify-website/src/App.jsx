@@ -10,7 +10,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import FAQ from './pages/Faq';
 import Register from './pages/Register';
 import Login  from './pages/Login';
-
+import AdminDashboard from './pages/AdminDashboard';
 function App() {
     return (
         <Router>
@@ -24,6 +24,7 @@ function App() {
                 <Route path ="/faq" element={<FAQ/>}/>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/admin/*" element={<AdminDashboard />} />
             </Routes>
         </Router>
     );
