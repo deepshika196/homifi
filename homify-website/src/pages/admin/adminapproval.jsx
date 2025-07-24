@@ -28,7 +28,6 @@ const AdminApproval = () => {
 
   return (
     <div className="admin-approval-container">
-      <Navbar_Admin/>
       <h2 className="admin-approval-header">Admin Approval</h2>
       <p className="admin-approval-subheader">Review and approve pending admin requests here.</p>
       
