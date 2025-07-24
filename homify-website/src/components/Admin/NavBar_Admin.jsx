@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import '../styles/admin_styles/Navbar.css';
+import '../../styles/admin_styles/Navbar.css';
 
 function Navbar_Admin() {
     const location = useLocation();
 
     const navCenterLinks = [
-        'Admin Approvals',
-        'Payments',
-        'User Management',
-        'Workers Management',
-        'Tickets'
+        { name: 'Admin Approvals', path: '/admin/adminapproval' },
+        { name: 'Payments', path: '/admin/paymentmanagement' },
+        { name: 'User Management', path: '/admin/usermanagement' },
+        { name: 'Workers Management', path: '/admin/workermanagement' },
+        { name: 'Tickets', path: '/admin/raiseticket' }
     ];
 
     const navRightLinks = [
@@ -31,8 +31,14 @@ function Navbar_Admin() {
             </div>
 
             <div className="navbar-center">
-                {navCenterLinks.map((item, index) => (
-                    <span key={index} className="center-link">{item.toUpperCase()}</span>
+                {navCenterLinks.map(link => (
+                    <Link
+                        key={link.name}
+                        to={link.path}
+                        className={`center-link ${location.pathname === link.path ? 'active' : ''}`}
+                    >
+                        {link.name.toUpperCase()}
+                    </Link>
                 ))}
             </div>
 
