@@ -1,0 +1,60 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 20px;
+    background-color: #4cb4b3; /* Match Figma teal */
+    color: white;
+    font-family: 'Arial Black', sans-serif;
+    flex-wrap: wrap;
+}
+
+.navbar-left .brand {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+}
+
+.navbar-center {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-link {
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: default;
+}
+
+.navbar-right {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    color: white;
+    gap: 4px;
+}
+
+.navbar-right .top-links {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.right-link {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.user-info span {
+    font-size: 12px;
+    display: block;
+    color: black;
+}
