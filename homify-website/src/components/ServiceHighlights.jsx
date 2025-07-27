@@ -1,5 +1,5 @@
 // src/components/ServiceHighlights.jsx
-import React from 'react';
+
 import '../styles/ServiceHighlights.css';
 
 function ServiceHighlights() {

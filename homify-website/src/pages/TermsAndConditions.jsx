@@ -1,4 +1,4 @@
-import React from 'react';
+;
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/TermsAndConditions.css';
@@ -45,7 +45,7 @@ function TermsAndConditions () {
 
       <h2>7. Limitation of Liability</h2>
       <p>
-        Flatify is not liable for any direct, indirect, incidental, or consequential damages resulting from the use of the platform or the services provided by third-party contractors. Users acknowledge that Flatify's role is limited to connecting users with service providers.
+        Flatify is not liable for any direct, indirect, incidental, or consequential damages resulting from the use of the platform or the services provided by third-party contractors. Users acknowledge that Flatify&apos;s role is limited to connecting users with service providers.
       </p>
 
       <h2>8. Modifications to Terms</h2>

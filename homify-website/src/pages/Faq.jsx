@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/Faq.css';
@@ -17,7 +16,7 @@ function FAQ(){
 
       <h2>2. How do I book a service?</h2>
       <p>
-        Booking a service on Homifi is simple. Create an account, browse through available services, and choose the one you need. After selecting a service provider and scheduling a time, you'll receive confirmation, and the professional will be at your doorstep as per the agreed schedule.
+        Booking a service on Homifi is simple. Create an account, browse through available services, and choose the one you need. After selecting a service provider and scheduling a time, you&apos;ll receive confirmation, and the professional will be at your doorstep as per the agreed schedule.
       </p>
 
       <h2>3. What types of services are available?</h2>
@@ -32,12 +31,12 @@ function FAQ(){
 
       <h2>5. Can I cancel a booking?</h2>
       <p>
-        Yes, you can cancel a booking up to 24 hours before the scheduled service time for a full refund. Cancellations made within 24 hours may not be eligible for a refund, depending on the service provider's policy.
+        Yes, you can cancel a booking up to 24 hours before the scheduled service time for a full refund. Cancellations made within 24 hours may not be eligible for a refund, depending on the service provider&apos;s policy.
       </p>
 
-      <h2>6. What if I'm not satisfied with the service?</h2>
+      <h2>6. What if I&apos;m not satisfied with the service?</h2>
       <p>
-        If you're not satisfied with the service, you can report the issue through our platform. We will work to mediate the situation between you and the service provider to reach a resolution. Refunds or service re-dos may be available, depending on the case.
+        If you&apos;re not satisfied with the service, you can report the issue through our platform. We will work to mediate the situation between you and the service provider to reach a resolution. Refunds or service re-dos may be available, depending on the case.
       </p>
 
       <h2>7. Are the service providers vetted?</h2>
@@ -47,7 +46,7 @@ function FAQ(){
 
       <h2>8. How can I contact customer support?</h2>
       <p>
-        If you need assistance, you can contact our customer support team via the 'Contact Us' section on the platform. You can also email us at [Customer Support Email], and we will respond to your query as soon as possible.
+        If you need assistance, you can contact our customer support team via the &apos;Contact Us&apos; section on the platform. You can also email us at [Customer Support Email], and we will respond to your query as soon as possible.
       </p>
 
       <h2>9. Do you offer any discounts?</h2>
@@ -57,7 +56,7 @@ function FAQ(){
 
       <h2>10. Can I reschedule my booking?</h2>
       <p>
-        Yes, you can reschedule your booking by logging into your account and choosing a new date and time. However, rescheduling within 24 hours of the service may incur additional charges depending on the service provider's policy.
+        Yes, you can reschedule your booking by logging into your account and choosing a new date and time. However, rescheduling within 24 hours of the service may incur additional charges depending on the service provider&apos;s policy.
       </p>
 
       <h2>11. How does Homifi ensure safety during service?</h2>
@@ -67,7 +66,7 @@ function FAQ(){
 
       <h2>12. How can I become a service provider?</h2>
       <p>
-        If you're a skilled professional looking to offer services through Homifi, you can apply to become a service provider by filling out the registration form in the 'Become a Service Provider' section. Once your application is reviewed and approved, you'll be able to accept jobs through our platform.
+        If you&apos;re a skilled professional looking to offer services through Homifi, you can apply to become a service provider by filling out the registration form in the &apos;Become a Service Provider&apos; section. Once your application is reviewed and approved, you&apos;ll be able to accept jobs through our platform.
       </p>
     </div>
     <Footer/>

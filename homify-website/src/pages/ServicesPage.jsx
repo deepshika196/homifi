@@ -1,5 +1,5 @@
 // src/pages/ServicesPage.jsx
-import React from 'react';
+
 import Navbar from '../components/Navbar'
 import ServiceCard from '../components/ServiceCard';
 import '../styles/ServicesPage.css';

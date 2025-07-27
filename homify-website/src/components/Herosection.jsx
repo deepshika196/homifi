@@ -1,4 +1,4 @@
-import React from 'react';
+
 import '../styles/HeroSection.css';
 import heroImage from '../assets/Electrician.png';
 import serviceImage from '../assets/Ac_Mechanic.jpg'; 

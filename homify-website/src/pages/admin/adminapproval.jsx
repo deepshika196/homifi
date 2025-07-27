@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../../styles/admin_styles/AdminApproval.css';
 import Navbar_Admin from '../../components/Admin/NavBar_Admin.jsx' // Import the dedicated CSS file
 
@@ -28,6 +28,7 @@ const AdminApproval = () => {
 
   return (
     <div className="admin-approval-container">
+      <Navbar_Admin/>
       <h2 className="admin-approval-header">Admin Approval</h2>
       <p className="admin-approval-subheader">Review and approve pending admin requests here.</p>
       
