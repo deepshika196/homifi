@@ -86,3 +86,34 @@ h2, h3 {
   cursor: pointer;
   align-self: flex-end;
 }
+.checkbox-section {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.checkbox-section label {
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox-section input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #007bff;
+  cursor: pointer;
+}
+.generate-field {
+  margin-bottom: 1.5rem;
+}
+
+.field-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
