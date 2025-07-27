@@ -26,6 +26,7 @@ const Login = () => {
         } else {
           alert('Invalid credentials or account not approved yet.');
         }
+      // eslint-disable-next-line no-unused-vars
       } catch (err) {
         alert('Server error');
       }
