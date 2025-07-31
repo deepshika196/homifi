@@ -34,7 +34,7 @@ function HeroSection() {
                 <div className="usermanage-right">
                     <h2>User Access & Management</h2>
                     <p>
-                       Flatify supports multiple user logins, tailored to the needs of each role within the community. Whether you're a resident, worker, or administrator, each user gets a personalized dashboard to perform their respective tasks securely and efficiently.
+                       Flatify supports multiple user logins, tailored to the needs of each role within the community. Whether you&apos;re a resident, worker, or administrator, each user gets a personalized dashboard to perform their respective tasks securely and efficiently.
                     </p>
                 </div>
             </section>
