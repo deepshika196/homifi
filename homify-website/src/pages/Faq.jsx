@@ -5,7 +5,7 @@ import '../styles/Faq.css';
 function FAQ(){
   return (
     <>
-    <Navbar />
+    <Navbar/>
     <div className="faq">
       <h1>Frequently Asked Questions (FAQ)</h1>
 
