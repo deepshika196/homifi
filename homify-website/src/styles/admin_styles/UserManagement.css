@@ -18,13 +18,19 @@ h2, h3 {
   border-radius: 10px;
 }
 
+/* 🔶 Spacing between input blocks */
+.generator-section > div {
+  margin-bottom: 1.5rem;
+}
+
+/* 🔶 Individual input groups */
 .generator-section .generate-block,
+.generator-section .generate-block-number,
 .generator-section .generate-floor,
 .generator-section .generate-house {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
   flex-wrap: wrap;
 }
 
@@ -86,6 +92,8 @@ h2, h3 {
   cursor: pointer;
   align-self: flex-end;
 }
+
+/* 🔹 Checkbox layout */
 .checkbox-section {
   margin-top: 10px;
   display: flex;
@@ -106,6 +114,8 @@ h2, h3 {
   accent-color: #007bff;
   cursor: pointer;
 }
+
+/* 🧩 Additional reusable spacing utility */
 .generate-field {
   margin-bottom: 1.5rem;
 }
