@@ -1,0 +1,317 @@
+.raise-ticket-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f7e6d7; /* Light peach background */
+  font-family: 'Arial', sans-serif;
+}
+
+.raise-ticket-container {
+  display: flex;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.ticket-form-section {
+  flex: 1;
+  padding: 40px;
+  background-color: #fff;
+}
+
+.ticket-form-section h1 {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.ticket-form-section .slogan {
+  color: #e74c3c; /* Reddish for alert */
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ticket-form-section .description {
+  color: #555;
+  font-size: 0.9em;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.form-box h3 {
+  color: #333;
+  font-size: 1.3em;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form-fields {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 48%; /* Adjust for spacing */
+}
+
+.form-group:last-child {
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.raise-ticket-button {
+  background-color: #28a745; /* Green button */
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0 auto;
+}
+
+.raise-ticket-button:hover {
+  background-color: #218838;
+}
+
+.add-new-option {
+  display: flex;
+  margin-top: 10px;
+}
+
+.add-new-option input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  border-right: none;
+  font-size: 0.9em;
+}
+
+.add-new-option button {
+  background-color: #28a745; /* Green button */
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.add-new-option button:hover {
+  background-color: #218838;
+}
+
+.status-dropdown {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-dropdown label {
+  margin-right: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.status-dropdown select {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9em;
+  background-color: #f0f0f0;
+}
+
+.status-dropdown select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.read-description-button {
+  background-color: #007bff; /* Blue button */
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.read-description-button:hover {
+  background-color: #0056b3;
+}
+
+.full-description {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 0.9em;
+  color: #333;
+  border: 1px solid #eee;
+}
+
+.ticket-history-section {
+  flex: 1;
+  background-color: #fcecdb; /* Slightly darker peach for history section */
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Revert to column for content stacking */
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align content to the top */
+}
+
+.timeline-content-wrapper {
+  flex: unset; /* Remove flex property */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  z-index: 1;
+  position: relative;
+  padding-right: 0; /* Remove right padding */
+}
+
+.ticket-history-section h2,
+.ticket-history-section .history-description {
+  z-index: 1;
+  position: relative;
+  align-self: center; /* Center these items */
+  margin-left: 0;
+}
+
+.timeline {
+  position: relative;
+  max-width: 400px; /* Restore max-width for timeline */
+  width: 100%;
+  margin: 0 auto; /* Center the timeline */
+  padding: 20px 0;
+  z-index: 1;
+  max-height: 500px; /* Approximate height for 5-6 items */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 10px; /* Add padding for scrollbar */
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #e74c3c;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px; /* Increase margin for better spacing */
+  position: relative;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  top: 0; /* Position at the very top of the item */
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+.timeline-item .date {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -25px; /* Adjust date position relative to the dot */
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.timeline-item .content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px 0 0 0; /* Add margin-top to position below date/dot */
+  width: 200px; /* Adjust width for better readability */
+  text-align: center;
+}
+
+.timeline-item .content h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.timeline-item .content p {
+  margin-bottom: 5px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Adjustments for image positioning and background removal */
+.background-image {
+  background-blend-mode: multiply; /* This might help with background removal depending on the image */
+}
