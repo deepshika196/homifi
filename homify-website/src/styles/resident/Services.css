@@ -1,0 +1,404 @@
+.services-page {
+  padding: 2rem;
+  background-color: #f7e6d7;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.section-header p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.header-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.header-icons .icon {
+  font-size: 2rem;
+}
+
+.section-header .icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+/* Service Scheduling Section */
+.service-scheduling-section {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-form-container {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.checkbox-icon {
+  font-size: 1.5rem;
+}
+
+.form-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.service-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.selected-worker-display {
+  background: #f0f0f0 !important;
+  color: #666;
+}
+
+.add-service-type-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.add-service-input {
+  flex: 1;
+}
+
+.add-service-button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.add-service-button:hover {
+  background: #1e7e34;
+}
+
+.book-button {
+  background: #2c5aa0;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: center;
+  margin-top: 1rem;
+}
+
+.book-button:hover {
+  background: #1e3f6b;
+}
+
+.disclaimer {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  color: #856404;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Past Fixes Section */
+.past-fixes-section {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.past-fixes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.past-fixes-table th,
+.past-fixes-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.past-fixes-table th {
+  background: #f8f9fa;
+  font-weight: bold;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.past-fixes-table td {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.payment-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.payment-status.paid {
+  background: #d4edda;
+  color: #155724;
+}
+
+.payment-status.not-paid {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.rating-stars .star {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.rating-stars .star.filled {
+  color: #FFD700;
+}
+
+.rating-stars .star:hover {
+  color: #FFD700;
+}
+
+/* Upcoming Fixes Section */
+.upcoming-fixes-section {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-fixes-container {
+  position: relative;
+}
+
+.fixes-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.fixes-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.fix-card {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.service-icon {
+  font-size: 1.5rem;
+}
+
+.service-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.detail-icon {
+  font-size: 1rem;
+  min-width: 20px;
+}
+
+.edit-icon {
+  cursor: pointer;
+  color: #007bff;
+  margin-left: auto;
+  font-size: 0.9rem;
+}
+
+.edit-icon:hover {
+  color: #0056b3;
+}
+
+.cancel-button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.cancel-button:hover {
+  background: #c82333;
+}
+
+.carousel-nav {
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-arrow {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  background: white;
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-page {
+    padding: 1rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .fixes-carousel {
+    flex-direction: column;
+  }
+  
+  .fix-card {
+    min-width: auto;
+  }
+  
+  .past-fixes-table {
+    font-size: 0.8rem;
+  }
+  
+  .past-fixes-table th,
+  .past-fixes-table td {
+    padding: 0.5rem;
+  }
+}

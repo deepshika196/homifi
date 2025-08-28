@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import '../../styles/admin_styles/Navbar.css';
+import '../../styles/resident/Navbar.css';
 
-function Navbar_Admin() {
+function Navbar_Resident() {
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -11,11 +11,10 @@ function Navbar_Admin() {
     };
 
     const navCenterLinks = [
-        { name: 'Admin Approvals', path: '/admin/adminapproval' },
-        { name: 'Payments', path: '/admin/paymentmanagement' },
-        { name: 'User Management', path: '/admin/usermanagement' },
-        { name: 'Workers Management', path: '/admin/workermanagement' },
-        { name: 'Tickets', path: '/admin/raiseticket' }
+        { name: 'Services', path: '/resident/services' },
+        { name: 'Payments', path: '/resident/payments' },
+        { name: 'Raise Ticket', path: '/resident/raiseticket' },
+        { name: 'User Profile', path: '/resident/userprofile' }
     ];
 
     const navRightLinks = [
@@ -23,11 +22,29 @@ function Navbar_Admin() {
         { name: 'Contact Us', path: '/contact' }
     ];
 
-    const userInfo = {
-        name: 'BRUKE',
-        apartment: 'ABC Apartments',
-        city: 'Chennai'
+    // Get user info from localStorage or use default values
+    const getUserInfo = () => {
+        const storedUser = localStorage.getItem('currentUser');
+        if (storedUser) {
+            try {
+                const user = JSON.parse(storedUser);
+                return {
+                    name: user.name || 'Resident Name',
+                    apartment: user.apartment || 'Resident Apartment',
+                    city: user.city || 'Resident City'
+                };
+            } catch (error) {
+                console.error('Error parsing user data:', error);
+            }
+        }
+        return {
+            name: 'Resident Name',
+            apartment: 'Resident Apartment',
+            city: 'Resident City'
+        };
     };
+
+    const userInfo = getUserInfo();
 
     return (
         <nav className="navbar-container">
@@ -56,7 +73,7 @@ function Navbar_Admin() {
                     ))}
                 </div>
                 <div className="user-info">
-                    <span>You are logged in as the (Main Admin)</span><br />
+                    <span>You are logged in as a (Resident)</span><br />
                     <span>NAME: {userInfo.name}</span><br />
                     <span>APARTMENT NAME: {userInfo.apartment.toUpperCase()}</span><br />
                     <span>CITY: {userInfo.city.toUpperCase()}</span>
@@ -69,4 +86,8 @@ function Navbar_Admin() {
     );
 }
 
-export default Navbar_Admin;
+export default Navbar_Resident;
+
+
+
+

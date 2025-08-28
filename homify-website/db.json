@@ -12,6 +12,51 @@
       "address": "10/60, 15th West Cross Street",
       "role": "main_admin",
       "approved": true
+    },
+    {
+      "id": "5802",
+      "name": "John Resident",
+      "email": "resident@gmail.com",
+      "phone": "9876543210",
+      "password": "Resident@123",
+      "pincode": "600039",
+      "city": "Chennai",
+      "apartment": "Police Quarters",
+      "address": "10/62, 15th West Cross Street",
+      "role": "resident",
+      "approved": true
+    },
+    {
+      "id": "6001",
+      "name": "Raju M",
+      "email": "raju.worker@example.com",
+      "phone": "9001112222",
+      "password": "Worker@123",
+      "pincode": "600039",
+      "city": "Chennai",
+      "apartment": "ABC Apartments",
+      "address": "Block A",
+      "role": "workers",
+      "approved": true,
+      "skills": ["Plumbing", "Cleaning"],
+      "rating": 4.5,
+      "available": true
+    },
+    {
+      "id": "6002",
+      "name": "Radha",
+      "email": "radha.worker@example.com",
+      "phone": "9003334444",
+      "password": "Worker@123",
+      "pincode": "600039",
+      "city": "Chennai",
+      "apartment": "ABC Apartments",
+      "address": "Block C",
+      "role": "workers",
+      "approved": true,
+      "skills": ["Electrical", "AC Repair"],
+      "rating": 4.2,
+      "available": true
     }
   ],
   "pendingAdmins": [
@@ -28,5 +73,5 @@
       "role": "admin",
       "approved": false
     }
-  ]
+  ] 
 }

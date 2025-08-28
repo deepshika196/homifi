@@ -1,0 +1,8 @@
+Receipt
+
+Type: Rent
+Amount: ₹12000
+Due Date: 01 August 2025
+Status: PAID
+Receipt#: Rent-REC-1756367301595
+Date: 28/08/2025, 13:18:36

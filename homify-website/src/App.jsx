@@ -9,6 +9,8 @@ import FAQ from './pages/Faq';
 import Register from './pages/Register';
 import Login  from './pages/Login';
 import AdminDashboard from './pages/AdminDashboard';
+import ResidentDashboard from './pages/ResidentDashboard';
+import WorkerDashboard from './pages/WorkerDashboard';
 function App() {
     return (
         <Router>
@@ -22,6 +24,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/admin/*" element={<AdminDashboard />} />
+                <Route path="/resident/*" element={<ResidentDashboard />} />
+                <Route path="/worker/*" element={<WorkerDashboard />} />
             </Routes>
         </Router>
     );

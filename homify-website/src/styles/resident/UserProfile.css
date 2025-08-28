@@ -1,0 +1,90 @@
+.profile-page {
+  background: #f7e6d7;
+  min-height: 100vh;
+  padding: 24px;
+  font-family: 'Arial', sans-serif;
+}
+
+.top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.panel {
+  background: #f4d7bd;
+  border: 2px solid #333;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+}
+
+.panel-title {
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #333;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.table.compact th, .table.compact td { font-size: 12px; }
+
+.status-column { display: flex; flex-direction: column; gap: 16px; }
+
+/* Profile Card */
+.profile-card { text-align: center; }
+.brand { font-weight: 700; margin-bottom: 8px; font-size: 18px; }
+.highlight { color: #2c5aa0; }
+.avatar {
+  width: 90px; height: 90px; border-radius: 50%;
+  background: #cfb299; display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 32px; margin: 10px 0;
+  border: 2px solid #333;
+}
+.avatar-label { font-weight: 800; letter-spacing: 1px; margin-bottom: 12px; }
+
+.field { text-align: left; margin: 10px 0; }
+.field label { font-size: 12px; font-weight: 800; display: block; margin-bottom: 6px; }
+.value-box {
+  background: #f8f2ea; border: 1px solid #333; padding: 6px 8px; font-size: 13px;
+}
+.value-input { width: 100%; padding: 6px 8px; border: 1px solid #333; background: #fff; }
+
+.edit-actions { display: flex; gap: 8px; justify-content: center; margin-top: 12px; }
+.btn { background: #fff; border: 1px solid #333; padding: 6px 10px; cursor: pointer; }
+.btn.small { padding: 4px 8px; font-size: 12px; }
+.btn.primary { background: #2c5aa0; color: #fff; border-color: #1e3f6b; }
+.btn.primary:hover { background: #1e3f6b; }
+
+/* Status badges */
+.status-badge { padding: 4px 6px; border: 1px solid #333; background: #fff; }
+.status-badge.completed { background: #d4edda; }
+.status-badge['in-progress'] {}
+
+.action-input { width: 100%; padding: 6px 8px; border: 1px solid #333; background: #fff; }
+
+/* Payments */
+.payments { margin-top: 16px; }
+.chip { padding: 4px 8px; border-radius: 12px; font-weight: 700; font-size: 12px; border: 1px solid #333; }
+.chip.paid { background: #d4edda; color: #155724; }
+.chip.due { background: #f8d7da; color: #721c24; }
+
+/* Note */
+.note { margin-top: 16px; background: #fff; border: 2px solid #333; padding: 12px; border-radius: 6px; display: grid; grid-template-columns: 120px 1fr; align-items: center; }
+.note-title { font-weight: 900; border-right: 2px solid #333; padding-right: 12px; text-align: center; }
+.note-text { padding-left: 12px; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .top-grid { grid-template-columns: 1fr; }
+}

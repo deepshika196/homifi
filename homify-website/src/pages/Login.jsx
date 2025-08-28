@@ -22,6 +22,8 @@ const Login = () => {
         );
         const data = await res.json();
         if (data.length > 0) {
+          // Store user data in localStorage
+          localStorage.setItem('currentUser', JSON.stringify(data[0]));
           navigate('/admin');
         } else {
           alert('Invalid credentials or account not approved yet.');
@@ -30,8 +32,40 @@ const Login = () => {
       } catch (err) {
         alert('Server error');
       }
+    } else if (userType === 'resident') {
+      try {
+        const res = await fetch(
+          `http://localhost:5000/users?email=${username}&password=${password}&role=resident&approved=true`
+        );
+        const data = await res.json();
+        if (data.length > 0) {
+          // Store user data in localStorage
+          localStorage.setItem('currentUser', JSON.stringify(data[0]));
+          navigate('/resident');
+        } else {
+          alert('Invalid credentials or account not approved yet.');
+        }
+      // eslint-disable-next-line no-unused-vars
+      } catch (err) {
+        alert('Server error');
+      }
+    } else if (userType === 'workers') {
+      try {
+        const res = await fetch(
+          `http://localhost:5000/users?email=${username}&password=${password}&role=workers&approved=true`
+        );
+        const data = await res.json();
+        if (data.length > 0) {
+          localStorage.setItem('currentUser', JSON.stringify(data[0]));
+          navigate('/worker');
+        } else {
+          alert('Invalid credentials or account not approved yet.');
+        }
+      } catch (err) {
+        alert('Server error');
+      }
     } else {
-      alert('Only admin login is enabled for now');
+      alert('Please select a valid user type');
     }
   };
 
