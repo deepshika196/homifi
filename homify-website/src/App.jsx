@@ -14,7 +14,7 @@ import ResidentDashboard from './pages/ResidentDashboard';
 import WorkerDashboard from './pages/WorkerDashboard';
 function App() {
     return (
-        <Router basename="/homifi">
+        <Router>
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutUsPage />} />
